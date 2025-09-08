@@ -7,9 +7,9 @@ app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'stevenepis9@gmail.com'      
-app.config['MAIL_PASSWORD'] = 'jann fpsp mptb ujhp'         
-app.config['MAIL_DEFAULT_SENDER'] = 'stevenepis9@gmail.com'
+app.config['MAIL_USERNAME'] = 'lykzellemaepadasas@gmail.com'      
+app.config['MAIL_PASSWORD'] = 'mwbn xtti gqqk mwew'         
+app.config['MAIL_DEFAULT_SENDER'] = 'lykzellemaepadasas@gmail.com'
 
 mail = Mail(app)
 
@@ -24,7 +24,7 @@ def feedback():
 
     try:
         # Send email
-        msg = Message("New Feedback Received", recipients=["stevenepis9@gmail.com"])
+        msg = Message("New Feedback Received", recipients=["lykzellemaepadasas@gmail.com"])
         msg.body = f"Message: {message}\nRating: {rating}"
         mail.send(msg)
 
