@@ -34,8 +34,6 @@ def feedback():
     except Exception as e:
         print("Email error:", str(e)) 
         return jsonify({"status": "error", "message": str(e)}), 500
-
-
 @app.route('/')
 def index():
     return "Flask Speech Recognition API is running! Use POST /predict to send audio."
