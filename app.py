@@ -16,6 +16,8 @@ mail = Mail(app)
 @app.route('/feedback', methods=['POST'])
 def feedback():
     data = request.json
+    print("Received feedback:", data) 
+
     message = data.get('message')
     rating = data.get('rating')
 
@@ -23,14 +25,16 @@ def feedback():
         return jsonify({"error": "Feedback message required"}), 400
 
     try:
-        # Send email
         msg = Message("New Feedback Received", recipients=["lykzellemaepadasas@gmail.com"])
         msg.body = f"Message: {message}\nRating: {rating}"
         mail.send(msg)
 
+        print("Email sent successfully!")  #
         return jsonify({"status": "success", "message": "Feedback sent!"}), 200
     except Exception as e:
+        print("Email error:", str(e)) 
         return jsonify({"status": "error", "message": str(e)}), 500
+
 
 @app.route('/')
 def index():
