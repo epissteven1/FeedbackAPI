@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
-SENDER_EMAIL = "stevenepis9@gmail.com" 
+SENDER_EMAIL = "noreply201000@gmail.com" 
 
 @app.route('/feedback', methods=['POST'])
 def feedback():
